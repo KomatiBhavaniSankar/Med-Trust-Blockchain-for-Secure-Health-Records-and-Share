@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Healthcare from "./Healthcare"; // Ensure correct location
+import Navbar from "./component/Navbar";
+import Report from "./component/Report";
+import Instructions from "./component/Instructions";
+import RiskPredictor from "./component/RiskPredictor";
+import Contact from "./component/contact"; // Ensure correct filename and location
+import MedicalInsurancePrediction from "./component/MedicalInsurancePrediction";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/healthcare" element={<Healthcare />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Report" element={<Report />} />  
+          <Route path="/Instructions" element={<Instructions />} />
+          <Route path="/RiskPredictor" element={<RiskPredictor />} />
+          <Route path="/MedicalInsurancePrediction" element={<MedicalInsurancePrediction />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
